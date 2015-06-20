@@ -1,0 +1,20 @@
+{
+  "name": "Array and Objects",
+  "version": "0.0.1",
+  "authors": [
+    "justincarb"
+  ],
+  "description": "Learning Array and Objects",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4"
+  }
+}
