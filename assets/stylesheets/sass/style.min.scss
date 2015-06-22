@@ -52,6 +52,7 @@ table {
 $blue: #00628B;
 $white: #fff;
 $light: #E6E6DC;
+$grey: #6C6C6C;
 
 /*   code */
 
@@ -78,4 +79,15 @@ $light: #E6E6DC;
 
 .container-content{
 	padding-top:50px;
+}
+
+.list li{
+    background-color:$grey;
+    padding:10px;
+    margin-bottom:10px;
+    color: $white;
+}
+
+.list li span{
+    float:right;
 }

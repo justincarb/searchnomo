@@ -2,7 +2,7 @@
 
 var clickGo = document.querySelector('.button-go');
 var searchInput = document.querySelector('.search-input');
-var containerContent = document.querySelector('.container-content');
+var list = document.querySelector('.list');
 var listArray = [];
 /*
 clickGo.onclick = function() {
@@ -44,15 +44,23 @@ clickGo.onclick = function() {
                 listArray.push(searchValue);
 
                 var ulTag = document.createElement('ul');
-
+                var removeItem = document.createElement('span');
+                var closeLink = document.createElement('a');
+                closeLink.setAttribute('href', "#");
+                closeLink.textContent = 'X';
+                
+                // adding a tag inside span
+                removeItem.appendChild(closeLink);
+                
                 for(var i= 0; i < listArray.length; i++ ){
                     var liTag = document.createElement('li');
                     liTag.textContent = listArray[i];
                     ulTag.appendChild(liTag);
+                    liTag.appendChild(removeItem);
                 }
 
-                containerContent.innerHTML = "";
-                containerContent.appendChild(ulTag)
+                list.innerHTML = "";
+                list.appendChild(ulTag)
 
             }else{
                 alert("value already exisits");
