@@ -1,32 +1,61 @@
-var inputBox = document.querySelector('#input-box');
-var textBox = document.querySelector('.text-box');
-var inputButton = document.querySelector('#input-button');
-var arrayBox = document.getElementById('array-box');
-
-var list = [];
-var names = '';
 
 
-inputButton.onclick = function(){
-  // check of input value is already exists in the array
-  if(list.indexOf(inputBox.value)> -1){
-    alert('This Value is already exists');
-  }else{
-    // push input value into the array.
-    list.push(inputBox.value);
-    // reset input box before updated array is loaded
-    arrayBox.innerHTML = '';
+var clickGo = document.querySelector('.button-go');
+var searchInput = document.querySelector('.search-input');
+var containerContent = document.querySelector('.container-content');
+var listArray = [];
+/*
+clickGo.onclick = function() {
+  var searchValue = searchInput.value;
+    if(searchValue === ""){
+      alert("please put a value in the input field");
 
-    // loop for array items
-    for(var i = 0; i < list.length; i++){
-      arrayBox.innerHTML += '<li>' + list[i] + '<a href="#" class="close-btn">X</a></li></br>';
-      }
-    }
-};
+      }else{
+        //checking if array already contains added list item
+        //if it is not, push the item to the array
+            if(listArray.indexOf(searchValue) == -1){
+              listArray.push(searchValue);
+
+            // Adding li tags to the array list items
+            var liTag = document.createElement('li');
+
+            for(var i= 0; i < listArray.length; i++ ){
+              containerContent.textContent = (listArray[i]);
+
+              containerContent.appendChild(liTag);
+            }
+            // if arry contains already contains list item then alert following message
+            }else{
+              alert("value already exisits");
+            }
+          }
+        };
+
+    */
 
 
-document.body.addEventListener('click',function(e){
-  if(e.target.className === 'close-btn'){
-    e.target.parentNode.remove();
-  }
-});
+    clickGo.onclick = function() {
+        var searchValue = searchInput.value;
+        if(searchValue === ""){
+            alert("please put a value in the input field");
+        }else{
+
+            if(listArray.indexOf(searchValue) == -1){
+                listArray.push(searchValue);
+
+                var ulTag = document.createElement('ul');
+
+                for(var i= 0; i < listArray.length; i++ ){
+                    var liTag = document.createElement('li');
+                    liTag.textContent = listArray[i];
+                    ulTag.appendChild(liTag);
+                }
+
+                containerContent.innerHTML = "";
+                containerContent.appendChild(ulTag)
+
+            }else{
+                alert("value already exisits");
+            }
+        }
+    };
