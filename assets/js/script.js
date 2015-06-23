@@ -44,7 +44,11 @@ clickGo.onclick = function() {
                 listArray.push(searchValue);
 
                 var ulTag = document.createElement('ul');
-                var removeItem = document.createElement('span');
+                
+                
+                for(var i= 0; i < listArray.length; i++ ){
+                    var liTag = document.createElement('li');
+                    var removeItem = document.createElement('span');
                 var closeLink = document.createElement('a');
                 closeLink.setAttribute('href', "#");
                 closeLink.textContent = 'X';
@@ -52,8 +56,6 @@ clickGo.onclick = function() {
                 // adding a tag inside span
                 removeItem.appendChild(closeLink);
                 
-                for(var i= 0; i < listArray.length; i++ ){
-                    var liTag = document.createElement('li');
                     liTag.textContent = listArray[i];
                     ulTag.appendChild(liTag);
                     liTag.appendChild(removeItem);
