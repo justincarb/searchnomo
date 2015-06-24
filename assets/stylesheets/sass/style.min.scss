@@ -54,7 +54,13 @@ $white: #fff;
 $light: #E6E6DC;
 $grey: #6C6C6C;
 
+
 /*   code */
+
+/* compass imports */
+
+@import "compass/css3";
+
 
 .container-header{
 	background-color: $blue;
@@ -86,8 +92,18 @@ $grey: #6C6C6C;
     padding:10px;
     margin-bottom:10px;
     color: $white;
+    @include border-radius(5px);
+}
+
+.close-link{
+	color:$white;
+	background-color:red;
+	padding:3px;
+	border-radius:3px;
 }
 
 .list li span{
     float:right;
 }
+
+
